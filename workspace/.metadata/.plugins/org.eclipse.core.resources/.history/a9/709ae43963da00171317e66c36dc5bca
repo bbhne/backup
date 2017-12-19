@@ -1,5 +1,0 @@
-package com.internousdev.wed.dto;
-
-public class LoginDTO {
-
-}
