@@ -21,8 +21,10 @@ pageEncoding="UTF-8" %>
 			<th>PASSWORD</th>
 		</tr>
 		<tr>
-			<s:iterator value="loginDTOList"/>
-			
+			<s:iterator value="loginDTOList">
+			<td><s:property value="username"/></td>
+			<td><s:property value="password"/></td>
+			</s:iterator>
 		</tr>
 	</tbody>
 
