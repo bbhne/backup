@@ -1,0 +1,21 @@
+package store.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import store.dto.LoginDTO;
+import store.util.DBConnector;
+
+public class LoginDAO {
+
+	public String username;
+	public String password;
+
+	public List<LoginDTO> loginDTOList = new ArrayList<LoginDTO>();
+	public List<LoginDTO> select(String username,String password)
+
+}

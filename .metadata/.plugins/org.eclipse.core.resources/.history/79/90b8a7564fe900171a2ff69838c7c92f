@@ -1,0 +1,5 @@
+package store.action;
+
+public class TestAction {
+
+}

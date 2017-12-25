@@ -1,0 +1,7 @@
+drop database if exists db;
+create database db;
+use db;
+
+create table users(
+user_id int primary key auto_increment,
+)

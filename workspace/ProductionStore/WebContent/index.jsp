@@ -12,7 +12,7 @@
 <body>
 
 	<div id="header">
-		<h1>PRODUCTION STORE</h1>
+		<a href="index.jsp"><h1>PROJECT STORE</h1></a>
 			<ul>
 			<li><a href="login.jsp">ログイン/新規登録</a></li>
 			<br>
@@ -24,6 +24,8 @@
 				</div>
 
 		<div id="main">
+
+		<img alt="" src="./image/are.png">
 
 		</div>
 
