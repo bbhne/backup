@@ -1,0 +1,5 @@
+package ec.dto;
+
+public class LoginDTO {
+
+}

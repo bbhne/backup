@@ -12,3 +12,4 @@
 2017-12-25 11:40:50,837 [main] INFO  org.eclipse.jetty.server.Server - Started @6367780ms
 2017-12-25 17:48:57,429 [Framework stop] INFO  o.e.jetty.server.ServerConnector - Stopped ServerConnector@7f8b92e0{HTTP/1.1}{0.0.0.0:0}
 2017-12-25 17:48:57,494 [Framework stop] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@29eaae72{/wse,null,UNAVAILABLE}
+2017-12-26 09:44:02,435 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.

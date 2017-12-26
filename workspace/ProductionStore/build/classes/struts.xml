@@ -10,6 +10,21 @@
 <package name="store.action" extends="struts-default">
 
 
+<action name="WelcomeAction" class="store.action.WelcomeAction"
+method="execute">
+<result name="success">welcome.jsp</result>
+</action>
+
+<action name="LoginAction" class="store.action.LoginAction"
+method="execute">
+<result name="success">login.jsp</result>
+<result name="error">loginError.jsp</result>
+</action>
+
+<action name="TestAction" class="store.action.TestAction"
+method="execute">
+<result name="success">test.jsp</result>
+</action>
 
 </package>
 </struts>

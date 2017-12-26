@@ -3,10 +3,12 @@ package store.action;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import store.dao.LoginDAO;
 import store.dto.LoginDTO;
 
-public class LoginAction {
+public class LoginAction extends ActionSupport {
 
 	private String username;
 	private String password;

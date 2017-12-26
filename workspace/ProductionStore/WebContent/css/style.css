@@ -86,7 +86,7 @@ body {
 
 #header ul {
 	float:right;
-	list-style:none;;
+	list-style:none;
 	margin-right:2em;
 	margin-bottom:0px;
 }
@@ -114,7 +114,6 @@ body {
 				line-height:10px;
 				font-size:16px;
 				}
-
 
 			#menubar a:link {
 			color:#ffffff;
@@ -157,6 +156,7 @@ body {
 			font-size:16px;
 			margin:0;
 			padding:0;
+			font-weight:normal;
 			}
 
 			#sita  ul {

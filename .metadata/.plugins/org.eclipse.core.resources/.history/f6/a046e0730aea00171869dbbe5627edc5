@@ -1,0 +1,5 @@
+package ec.dao;
+
+public class BuyItemDAO {
+
+}

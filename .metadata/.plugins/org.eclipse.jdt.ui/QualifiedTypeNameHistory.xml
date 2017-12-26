@@ -9,4 +9,6 @@
 <fullyQualifiedTypeName name="com.internousdev.webproj5.dao.HelloStrutsDAO"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="store.util.DBConnector"/>
+<fullyQualifiedTypeName name="ec.util.DBConnector"/>
 </qualifiedTypeNameHistroy>

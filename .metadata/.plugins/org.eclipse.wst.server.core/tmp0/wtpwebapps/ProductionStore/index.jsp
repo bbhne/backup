@@ -14,7 +14,7 @@
 	<div id="header">
 		<a href="index.jsp"><h1>PROJECT STORE</h1></a>
 			<ul>
-			<li><a href="login.jsp">ログイン/新規登録</a></li>
+			<li><a href="welcome.jsp">ログイン/新規登録</a></li>
 			<br>
 				<li><a href="">	</a></li>
 			</ul>
