@@ -1,0 +1,60 @@
+package store.dao;
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import store.dto.MypageDTO;
+import store.util.DBConnector;
+
+public class FavoDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+
+	public ArrayList<MypageDTO> myPageList = new ArrayList<MypageDTO>();
+
+	public void addFavoList(String item) {
+
+
+		String sql_item_info_transaction = "select item_transaction_id from item_info_transaction where item_name=?";
+		String sql_item_favorite = "INSERT INTO item_favorite (?, user_master_id, insert_date) VALUES(?, ?, ?, ?, ?, ?)";
+
+
+		// item_info_transactionテーブルからitem_transaction_idをもってくる
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql_item_info_transaction);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			String itemTransactionId=null;
+			if(resultSet.next()) {
+				itemTransactionId= resultSet.getString("item_transaction_id");
+			}
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+
+		// item_favoriteテーブルへ登録
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql_item_favorite);
+			preparedStatement.setString(1, item_transaction_id);
+			preparedStatement.setString(2, total_price);
+			preparedStatement.setString(3, total_count);
+			preparedStatement.setString(4, user_master_id);
+			preparedStatement.setString(5, pay);
+			preparedStatement.setString(6, dateUtil.getDate());
+
+			preparedStatement.execute();
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			connection.close();
+		}
+
+	}
+
+}

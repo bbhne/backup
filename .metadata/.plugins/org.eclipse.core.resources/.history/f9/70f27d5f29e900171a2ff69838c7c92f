@@ -1,5 +1,0 @@
-package com.internousdev.test.dto;
-
-public class LoginDTO {
-
-}

@@ -1,0 +1,38 @@
+package ikinuki.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import ikinuki.util.DBConnector;
+
+public class FavoDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+
+	private Connection connection = dbConnector.getConnection();
+
+	String sql = "INSERT INTO favorite(itemId, itemName) VALUES(?,?)";
+
+
+	/**
+	 * tourokumethod
+	 */
+
+	public void itemFavoTable(String itemId, String itemName) throws SQLException {
+
+		try {
+			PreparedStatement prepare = connection.prepareStatement(sql);
+			prepare.setString(1, "itemId");
+			prepare.setString(2, "itemName");
+
+			prepare.execute();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			connection.close();
+		}
+
+	}
+
+}

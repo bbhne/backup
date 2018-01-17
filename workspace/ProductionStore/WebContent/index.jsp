@@ -12,7 +12,7 @@
 <body>
 
 	<div id="header">
-		<a href="index.jsp"><h1>PROJECT STORE</h1></a>
+		<a href="index.jsp"><img alt="" src="./image/phanpro.png" height="60px"></a>
 			<ul>
 			<li><a href="welcome.jsp">ログイン/新規登録</a></li>
 			<br>
@@ -25,7 +25,20 @@
 
 		<div id="main">
 
-		<img alt="" src="./image/are.png">
+		<img alt="" src="./image/ogre2.png" height="600px">
+
+
+	<table>
+
+	<td><img alt="" src="./image/ogre2.png" height="150px">
+
+	</td>
+	<td><img alt="" src="./image/ogre2.png" height="150px"><br>aaaa</td>
+		<td><img alt="" src="./image/ogre2.png" height="150px"><br>aaaaaa</td>
+			<td><img alt="" src="./image/ogre2.png" height="150px"></td>
+
+	</table>
+
 
 		</div>
 

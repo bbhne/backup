@@ -9,8 +9,18 @@ body {
 
 			img {
 			float:left;
-			margin:0.5em;
+			margin:0em;
+			padding:0em;
 			user-select:none;
+			}
+
+			.ico img {
+			float:left;
+			margin-left:2em;
+			margin-bottom:1em;
+			width:150px;
+			height:150px;
+			border-radius:100%;
 			}
 
 			br {
@@ -18,7 +28,7 @@ body {
 			}
 
 			table {
-			border:1px;
+			border:0px;
 			}
 
 			input[type="submit"] {
@@ -138,9 +148,6 @@ body {
 
 }
 
-.item {
-	float:left;
-}
 
 
 
@@ -174,5 +181,29 @@ body {
 	text-align:center;
 	background:linear-gradient(#b9b9b9,#ffffff);
 }
+
+
+/*è§ïiàÍóó*/
+
+{
+
+}
+
+{
+	min-height:200px;
+	border:1px solid;
+}
+
+.myp_jiko {
+	clear:both;
+	border-radius:25px;
+	margin:1em;
+	padding:1em;
+	width:200px;
+	min-height:100px;
+	background-color:black;
+	color:white;
+}
+
 
 

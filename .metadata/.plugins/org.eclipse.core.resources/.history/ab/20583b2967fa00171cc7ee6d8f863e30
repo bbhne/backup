@@ -1,0 +1,50 @@
+package ec.zahura.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import ec.zahura.dto.BuyItemDTO;
+import ec.zahura.util.DBConnector;
+
+public class BuyItemDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+	private BuyItemDTO buyItemDTO = new BuyItemDTO();
+
+	/**
+	 * 商品情報取得メソッド
+	 *
+	 * @return BuyItemDTO
+	 */
+
+	public BuyItemDTO getBuyItemInfo() {
+//item_image今日いじりました↓
+		String sql = "SELECT id,item_name,item_image,item_price FROM item_info_transaction";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if(resultSet.next()) {
+				buyItemDTO.setId(resultSet.getInt("id"));
+				buyItemDTO.setItemName(resultSet.getString("item_name"));
+				buyItemDTO.setItemImage(resultSet.getString("item_image"));
+				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
+				System.out.println(buyItemDTO.getId());
+				System.out.println(buyItemDTO.getItemImage());
+				System.out.println(buyItemDTO.getItemName());
+				System.out.println(buyItemDTO.getItemPrice());
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return buyItemDTO;
+	}
+
+	public BuyItemDTO getBuyItemDTO() {
+		return buyItemDTO;
+	}
+
+}

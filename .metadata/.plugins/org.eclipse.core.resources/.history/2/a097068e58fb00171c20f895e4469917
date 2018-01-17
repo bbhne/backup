@@ -1,0 +1,135 @@
+body {
+	font-family:YuMincho,'Yu Mincho',serif;
+	color:#000000;
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+}
+
+	#prof {
+		border-radius:50px;
+
+	}
+
+	img {
+		margin:0;
+		padding:0;
+		user-select:none;
+	}
+	br {
+		user-select:none;
+	}
+	a:link {
+		color:#000000;
+		text-decoration:none;
+	}
+	a:visited {
+		color:#000000;
+		text-decoration:none;
+	}
+	a:hover {
+		color:#ac946c;
+		text-decoration:none;
+	}
+	a:active {
+		color:#cac6ae;
+		text-decoration:none;
+	}
+
+				input[type="submit"] {
+			min-width:80px;
+			height:25px;
+			background-color:#b0b0b0;
+			border-radius:4px;
+			border:0px;
+			color:#ffffff;
+			font-size:16px;
+			}
+
+			input[type="submit"]:hover {
+			min-width:80px;
+			height:25px;
+			background-color:#547091;
+			border-radius:4px;
+			border:0px;
+			color:#ffffff;
+			font-size:16px;
+			}
+
+			input[type="text"]{
+			width:128px;
+			height:18px;
+			background-color:#b0b0b0;
+			border-radius:4px;
+			border:0px;
+			color:#ffffff;
+			font-size:16px;
+			}
+
+			input[type="password"]{
+			width:128px;
+			height:18px;
+			background-color:#b0b0b0;
+			border-radius:4px;
+			border:0px;
+			color:#ffffff;
+			font-size:16px;
+			}
+
+#header {
+	min-height:80px;
+	background-color:#ffffff;
+	border-bottom:30px solid #000000;
+	border-radius:50px;
+	margin:0;
+	padding:0;
+}
+#header h1 {
+	float:left;
+	line-height:60px;
+	margin-left:1em;
+	font-size:25px;
+}
+	#header ul {
+		float:right;
+		list-style:none;
+		margin-right:2em;
+		}
+		#header ul li {
+			float:left;
+			font-size:16px;
+		}
+
+#main {
+	float:left;
+	background-color:#ffffff;
+	padding:1em;
+}
+
+#footer {
+	clear:both;
+	min-height:80px;
+	text-align:center;
+	line-height:60px;
+	border-top:30px solid #000000;
+	background-color:#ffffff;
+}
+
+
+#text-center {
+	display:inline-block;
+	text-align:center;
+}
+
+#search {
+	min-width:150px;
+	min-height:200px;
+	color:black;
+	background-color:skyblue;
+}
+//#search table,tr,td {
+	border:1px solid #000000;
+	background-color:blue;
+	min-width:200px;
+}

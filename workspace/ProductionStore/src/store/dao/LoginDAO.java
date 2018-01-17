@@ -29,6 +29,7 @@ public class LoginDAO {
 
 			while(rs.next()) {
 				LoginDTO dto = new LoginDTO();
+				dto.setId(rs.getInt("user_id"));
 				dto.setUsername(rs.getString("user_name"));
 				dto.setPassword(rs.getString("password"));
 				loginDTOList.add(dto);
@@ -36,6 +37,7 @@ public class LoginDAO {
 
 			if(loginDTOList.size()<=0) {
 				LoginDTO dto = new LoginDTO();
+				dto.setId(0);
 				dto.setUsername("該当なし");
 				dto.setPassword("該当なし");
 				loginDTOList.add(dto);

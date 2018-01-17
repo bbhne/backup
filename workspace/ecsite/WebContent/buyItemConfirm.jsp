@@ -104,7 +104,7 @@ pageEncoding="UTF-8" %>
 					<td><input type="button" value="戻る"
 					onclick="submitAction('HomeAction')"/></td>
 					<td><input type="button" value="完了"
-					onclick="submitAction('BuyItemConfirmAction')"/></td>
+					onclick="submitAction('BuyItemConfirmAction')"></td>
 				</tr>
 			</s:form>
 		</div>

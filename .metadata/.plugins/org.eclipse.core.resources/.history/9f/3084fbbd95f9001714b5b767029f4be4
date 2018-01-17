@@ -1,0 +1,5 @@
+package ec.zahura.dao;
+
+public class BuyItemDAO {
+
+}

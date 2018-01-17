@@ -1,0 +1,51 @@
+package ec.zahura.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import ec.zahura.dao.FavoDAO;
+
+public class FavoAction extends ActionSupport implements SessionAware {
+
+	private String itemName;
+	/**
+	 * アイテム情報を格納
+	 */
+	public Map<String,Object> session;
+
+
+	private FavoDAO favoDAO = new FavoDAO();
+
+	public String execute() {
+		//今触った↓
+		favoDAO.FavoList(
+				session.get("item").toString()
+				);
+		//
+		String result = SUCCESS;
+
+		session.put("itemName", itemName);
+
+		FavoDAO favodao = new FavoDAO();
+		favodao.FavoList(itemName);
+
+		return result;
+	}
+
+	public String getItem() {
+		return itemName;
+	}
+
+	public void setItem(String item) {
+		this.itemName = item;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+}

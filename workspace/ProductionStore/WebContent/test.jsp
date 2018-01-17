@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="header">
-		<a href="index.jsp"><h1>PROJECT STORE</h1></a>
+		<a href="index.jsp"><img alt="" src="./image/phanpro.png" height="60px"></a>
 			<ul>
 			<li><a href="welcome.jsp">ログイン/新規登録</a></li>
 			<br>

@@ -1,0 +1,5 @@
+package ec.zahura.dto;
+
+public class BuyItemDTO {
+
+}

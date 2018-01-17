@@ -2,13 +2,22 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
 <fullyQualifiedTypeName name="com.internousdev.webproj4.util.DBConnector"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.internousdev.webproj5.dao.HelloStrutsDAO"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="store.util.DBConnector"/>
 <fullyQualifiedTypeName name="ec.util.DBConnector"/>
+<fullyQualifiedTypeName name="store.dao.BuyItemDAO"/>
+<fullyQualifiedTypeName name="store.util.DBConnector"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="store.dao.FavoDAO"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="ec.zahura.dto.MyPageDTO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="ec.zahura.dao.FavoDAO"/>
+<fullyQualifiedTypeName name="ec.zahura.dao.BuyItemDAO"/>
+<fullyQualifiedTypeName name="ec.zahura.dto.BuyItemDTO"/>
 </qualifiedTypeNameHistroy>
