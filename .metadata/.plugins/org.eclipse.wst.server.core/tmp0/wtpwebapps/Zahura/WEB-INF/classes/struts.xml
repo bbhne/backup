@@ -7,6 +7,8 @@
 <!-- Strutsの詳細設定 -->
 <struts>
 	<constant name="struts.devMode" value="false"/>
+	<constant name="struts.ui.theme" value="simple" />
+
 <!-- 対象のpackageを設定 -->
 	<package name="ec.zahura.action" extends="struts-default">
 <!-- GoHomeAction -->
@@ -83,7 +85,7 @@
 	</action>
 
 <!-- FavoAction -->
-	<action name="FavoAction" class="ec.zahura.action.FavoAction"
+	<action name="FavoriteAction" class="ec.zahura.action.FavoriteAction"
 	method="execute">
 	<result name="success">favoriteComplete.jsp</result>
 	</action>

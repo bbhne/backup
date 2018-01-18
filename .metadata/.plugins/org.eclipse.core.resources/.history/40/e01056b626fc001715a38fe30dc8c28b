@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- Strutsの詳細設定 -->
+<struts>
+	<constant name="struts.devMode" value="false"/>
+	<constant name="struts.ui.theme" value="simple" />
+
+<!-- 対象のpackageを設定 -->
+	<package name="ec.zahura.action" extends="struts-default">
+<!-- GoHomeAction -->
+	<action name="GoHomeAction" class="ec.zahura.action.GoHomeAction"
+	method="execute">
+	<result name="success">home.jsp</result>
+	</action>
+
+<!-- HomeAction -->
+	<action name="HomeAction" class="ec.zahura.action.HomeAction"
+	method="execute">
+	<result name="login">login.jsp</result>
+	<result name="success">buyItem.jsp</result>
+	</action>
+
+<!-- LoginAction -->
+	<action name="LoginAction" class="ec.zahura.action.LoginAction"
+	method="execute">
+	<result name="success">buyItem.jsp</result>
+	<result name="error">login.jsp</result>
+	</action>
+
+<!-- UserCreateAction -->
+	<action name="UserCreateAction" class="ec.zahura.action.UserCreateAction"
+	method="execute">
+	<result name="success">userCreate.jsp</result>
+	<result name="back">login.jsp</result>
+	</action>
+
+<!-- UserCreateConfirmAction -->
+	<action name="UserCreateConfirmAction" class="ec.zahura.action.UserCreateConfirmAction"
+	method="execute">
+	<result name="success">userCreateConfirm.jsp</result>
+	<result name="error">userCreate.jsp</result>
+	</action>
+
+<!-- UserCreateCompleteAction -->
+	<action name="UserCreateCompleteAction" class="ec.zahura.action.UserCreateCompleteAction"
+	method="execute">
+	<result name="success">userCreateComplete.jsp</result>
+	</action>
+
+<!-- BuyItemAction -->
+	<action name="BuyItemAction" class="ec.zahura.action.BuyItemAction"
+	method="execute">
+	<result name="success">buyItemConfirm.jsp</result>
+	<result name="error">buyItem.jsp</result>
+	</action>
+
+<!-- BuyItemConfirmAction -->
+	<action name="BuyItemConfirmAction" class="ec.zahura.action.BuyItemConfirmAction"
+	method="execute">
+	<result name="success">buyItemComplete.jsp</result>
+	<result name="back">buyItem.jsp</result>
+	</action>
+
+<!-- BuyItemCompleteAction -->
+	<action name="BuyItemCompleteAction" class="ec.zahura.action.BuyItemCompleteAction"
+	method="execute">
+	<result name="success">home.jsp</result>
+	</action>
+
+<!-- MyPageAction -->
+	<action name="MyPageAction" class="ec.zahura.action.MyPageAction"
+	method="execute">
+	<result name="success">myPage.jsp</result>
+	<result name="error">error.jsp</result>
+	</action>
+
+<!-- LogoutAction -->
+	<action name="LogoutAction" class="ec.zahura.action.LogoutAction"
+	method="execute">
+	<result name="success">login.jsp</result>
+	</action>
+
+<!-- FavoAction -->
+	<action name="FavoriteAction" class="ec.zahura.action.FavoriteAction"
+	method="execute">
+	<result name="success">favoriteComplete.jsp</result>
+
+	</action>
+
+	</package>
+</struts>
+

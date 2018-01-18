@@ -1,5 +1,7 @@
 package ec.zahura.action;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -32,64 +34,89 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 * ログインパスワード
 	 */
 	private String loginPassword;
-	/**
-	 * 処理結果を格納
-	 */
-	private String result;
 
 	/**
 	 * ログイン情報を格納
 	 */
 	public Map<String,Object> session;
-	/**
-	 * ログイン情報取得DAO
-	 */
-	private LoginDAO loginDAO = new LoginDAO();
-	/**
-	 * ログイン情報格納DTO
-	 */
-	private LoginDTO loginDTO = new LoginDTO();
-	/**
-	 * アイテム情報を取得
-	 */
-	private BuyItemDAO buyItemDAO = new BuyItemDAO();
+
+
+	private List<BuyItemDTO> buyItemList = new ArrayList<BuyItemDTO>();
+
+	private String itemTransactionId;
+	private String userMasterId;
 
 	/**
 	 * 実行メソッド
 	 */
 	public String execute() {
+		// 処理結果を格納
+		String result = ERROR;
 
-		result = ERROR;
-
-
-
-
+		 // ログイン情報取得DAO
+		LoginDAO loginDAO = new LoginDAO();
+		// ログイン情報格納DTO
+		LoginDTO loginDTO = new LoginDTO();
 		//ログイン実行
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
 
+		userMasterId=loginDTO.getId();
+
 		session.put("loginUser", loginDTO);
+
+			System.out.println(loginUserId);
+			System.out.println(loginPassword);
 
 		//ログイン情報を比較
 		if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
 
 			result = SUCCESS;
 
+
+			// アイテム情報を取得
+			BuyItemDAO buyItemDAO = new BuyItemDAO();
+
 			//アイテム情報を取得
+			buyItemList = buyItemDAO.getBuyItemList();
+			System.out.println(buyItemList.get(0).getItemName());
+			System.out.println(buyItemList.get(0).getItemPrice());
 
-			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
-			System.out.println(buyItemDTO.getItemName());
-			System.out.println(buyItemDTO.getItemPrice());
 
-
-			session.put("login_user_id", loginDTO.getLoginId());
-			session.put("id", buyItemDTO.getId());
-			session.put("buyItem_name", buyItemDTO.getItemName());
-			session.put("buyItem_price", buyItemDTO.getItemPrice());
+//			session.put("login_user_id", loginDTO.getLoginId());
+//			session.put("id", buyItemDTO.getId());
+//			session.put("buyItem_name", buyItemDTO.getItemName());
+//			session.put("buyItem_price", buyItemDTO.getItemPrice());
 
 			return result;
 		}
 		return result;
 	}
+
+
+
+	public String getItemTransactionId() {
+		return itemTransactionId;
+	}
+
+
+
+	public void setItemTransactionId(String itemTransactionId) {
+		this.itemTransactionId = itemTransactionId;
+	}
+
+
+
+	public String getUserMasterId() {
+		return userMasterId;
+	}
+
+
+
+	public void setUserMasterId(String userMasterId) {
+		this.userMasterId = userMasterId;
+	}
+
+
 
 	public String getLoginUserId() {
 		return loginUserId;
@@ -106,6 +133,18 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	}
 
 
+
+	public List<BuyItemDTO> getBuyItemList() {
+		return buyItemList;
+	}
+
+	public void setBuyItemList(List<BuyItemDTO> buyItemList) {
+		this.buyItemList = buyItemList;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
 
 	@Override
 	public void setSession(Map<String,Object> session) {

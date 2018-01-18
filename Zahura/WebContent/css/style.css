@@ -37,7 +37,8 @@ body {
 		text-decoration:none;
 	}
 
-				input[type="submit"] {
+
+			input[type="submit"] {
 			min-width:80px;
 			height:25px;
 			background-color:#b0b0b0;
@@ -107,6 +108,15 @@ body {
 	padding:1em;
 }
 
+	#main2 {
+		float:both;
+		width:70%;
+		padding:0.5em;
+		border-top:30px solid #000000;
+		border-bottom:30px solid #000000;
+		border-radius:30%;
+	}
+
 #footer {
 	clear:both;
 	min-height:80px;
@@ -133,3 +143,4 @@ body {
 	background-color:blue;
 	min-width:200px;
 }
+
