@@ -8,7 +8,9 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import ec.zahura.dao.BuyItemDAO;
 import ec.zahura.dao.FavoriteDAO;
+import ec.zahura.dto.BuyItemDTO;
 import ec.zahura.dto.FavoriteDTO;
 
 public class FavoriteAction extends ActionSupport implements SessionAware {
@@ -24,16 +26,22 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 	private String pay;
 	private String userMasterId;
 
+	private String errorMessage;
+
+	private List<BuyItemDTO> buyItemList = new ArrayList<BuyItemDTO>();
+
+
 
 	private String itemTransaction;
 
 	public List<FavoriteDTO> favoriteList = new ArrayList<FavoriteDTO>();
 
+
 	/**
 	 * アイテム情報を格納
 	 */
 	public Map<String,Object> session;
-	FavoriteDAO favo = new FavoriteDAO();
+//	FavoriteDAO favo = new FavoriteDAO();
 
 //今日
 	public String execute() {
@@ -47,6 +55,18 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 		System.out.println(pay);
 		System.out.println(userMasterId);
 		System.out.println("--------------------------");
+
+
+		errorMessage=null;
+		if(checkList==null){
+			errorMessage="商品がなにも選択されていません。";
+			// アイテム情報を取得
+			BuyItemDAO buyItemDAO = new BuyItemDAO();
+			//アイテム情報を取得
+			buyItemList = buyItemDAO.getBuyItemList();
+			return ERROR;
+		}
+
 
 		String[] itemTransactionIdList = itemTransactionId.split(", ", 0);
 		String[] itemNameList = itemName.split(", ", 0);
@@ -93,6 +113,26 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 		result = SUCCESS;
 		return result;
 	}
+
+
+
+
+
+	public List<BuyItemDTO> getBuyItemList() {
+		return buyItemList;
+	}
+
+
+
+
+
+	public void setBuyItemList(List<BuyItemDTO> buyItemList) {
+		this.buyItemList = buyItemList;
+	}
+
+
+
+
 
 	public String getItemTransactionId() {
 		return itemTransactionId;
@@ -190,6 +230,14 @@ public class FavoriteAction extends ActionSupport implements SessionAware {
 
 	public void setFavoriteList(List<FavoriteDTO> favoriteList) {
 		this.favoriteList = favoriteList;
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 

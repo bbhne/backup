@@ -30,11 +30,11 @@ public class BuyItemDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			if(resultSet.next()) {
-				buyItemDTO.setId(resultSet.getInt("id"));
+				buyItemDTO.setItemTransactionId(resultSet.getString("id"));
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemImage(resultSet.getString("item_image"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
-				System.out.println(buyItemDTO.getId());
+				System.out.println(buyItemDTO.getItemTransactionId());
 				System.out.println(buyItemDTO.getItemName());
 				System.out.println(buyItemDTO.getItemImage());
 				System.out.println(buyItemDTO.getItemPrice());
@@ -63,7 +63,8 @@ public class BuyItemDAO {
 
 			while(resultSet.next()) {
 				BuyItemDTO buyItemDTO = new BuyItemDTO();
-				buyItemDTO.setId(resultSet.getInt("id"));
+				buyItemDTO.setId(resultSet.getString("id"));
+				buyItemDTO.setItemTransactionId(resultSet.getString("id"));
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemImage(resultSet.getString("item_image"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
@@ -78,13 +79,15 @@ public class BuyItemDAO {
 
 				buyItemDTO.setInsertDate(resultSet.getString("insert_date"));
 				buyItemDTO.setUpdateDate(resultSet.getString("update_date"));
-				System.out.println(buyItemDTO.getId());
+				System.out.println("----------BuyItemDAO");
+				System.out.println(buyItemDTO.getItemTransactionId());
 				System.out.println(buyItemDTO.getItemName());
 				System.out.println(buyItemDTO.getItemImage());
 				System.out.println(buyItemDTO.getItemPrice());
 				System.out.println(buyItemDTO.getItemStock());
 				System.out.println(buyItemDTO.getInsertDate());
 				System.out.println(buyItemDTO.getUpdateDate());
+				System.out.println("--------------------");
 				buyItemList.add(buyItemDTO);
 			}
 		}catch(Exception e) {

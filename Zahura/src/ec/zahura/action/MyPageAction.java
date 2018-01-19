@@ -21,7 +21,7 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 			/**
 			 * マイページ情報取得DAO
 			 */
-
+	MyPageDAO myPageDAO = new MyPageDAO();
 	/**
 	 * マイページ情報格納DTO
 	 */
@@ -37,8 +37,6 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 	 * 商品履歴取得メソッド
 	 */
 	public String execute() throws SQLException {
-		MyPageDAO myPageDAO = new MyPageDAO();
-
 		if(!session.containsKey("id")) {
 			return ERROR;
 		}

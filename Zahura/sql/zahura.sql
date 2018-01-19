@@ -20,6 +20,7 @@ drop table if exists login_user_transaction;
 
 
 
+
 drop table if exists item_info_transaction;
 	create table item_info_transaction(
 	id int not null primary key auto_increment,
@@ -60,3 +61,10 @@ drop table if exists user_buy_item_transaction;
 
 insert into user_buy_item_transaction values(1,1,100,100,"1","クレジット","2018-01-12 00:00:00",null);
 
+
+drop table if exists imege_table;
+	create table image_table(
+	image varchar(255)
+	);
+
+	insert into image_table values("./image/are.png");

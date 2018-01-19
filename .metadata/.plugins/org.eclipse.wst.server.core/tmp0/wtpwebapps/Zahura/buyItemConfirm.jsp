@@ -7,6 +7,7 @@ pageEncoding="UTF-8" %>
 <head>
 
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/buy_item.css">
 
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -32,25 +33,45 @@ pageEncoding="UTF-8" %>
 <div id="main">
 	<p>BuyItemConfirm</p>
 
-	<s:form>
-		商品名
-		<s:property value="session.buyItem_name"/><br>
-
-		値段
-		<s:property value="session.total_price"/><span>円</span><br>
-
-		購入個数
-		<s:property value="session.count"/><span>個</span><br>
-
-		支払い方法
-		<s:property value="session.pay"/><br>
 
 
-	<input type="button" value="戻る"
-	onclick="location.href='HomeAction'"/>
+<s:form action="BuyItemAction">
+
+
+
+<table>
+
+		<s:iterator value="buyItemList">
+		<tr><s:property value="%{id}"/></tr>
+		<s:hidden name="itemTransactionId" value="%{id}"/>
+
+		<tr>
+			<td><span>商品名:</span><s:property value="itemName"/></td>
+			<s:hidden name="itemName" value="%{itemName}"/>
+
+			<td><img src='<s:property value="itemImage"/>' class="resize" /></td>
+			<s:hidden name="itemImage" value="%{itemImage}" />
+
+			<td>値段:<s:property value="itemPrice"/><span>円</span></td>
+			<s:hidden name="itemPrice" value="%{itemPrice}"/>
+
+
+		</tr>
+		</s:iterator>
+
+		</table>
+		<input type="button" value="戻る"
+	onclick="location.href='BuyItemAction'"/>
 	<input type="button" value="完了"
 	onclick="location.href='BuyItemConfirmAction'"/>
-	</s:form>
+</s:form>
+
+
+
+
+
+
+
 	</div>
 <div id="footer">
 		Copyright &copy PRODUCTION STORE All rights

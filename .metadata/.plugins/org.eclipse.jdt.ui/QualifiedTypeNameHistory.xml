@@ -13,10 +13,7 @@
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>
 <fullyQualifiedTypeName name="ec.zahura.dao.FavoDAO"/>
-<fullyQualifiedTypeName name="ec.zahura.dao.BuyItemDAO"/>
-<fullyQualifiedTypeName name="ec.zahura.dto.BuyItemDTO"/>
 <fullyQualifiedTypeName name="com.mysql.fabric.xmlrpc.base.Array"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="ec.zahura.dto.MyPageDTO"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
@@ -24,5 +21,9 @@
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="ec.zahura.dao.FavoriteDAO"/>
 <fullyQualifiedTypeName name="ec.zahura.dto.FavoriteDTO"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.compiler.sym"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="ec.zahura.dao.BuyItemDAO"/>
+<fullyQualifiedTypeName name="ec.zahura.dto.BuyItemDTO"/>
 </qualifiedTypeNameHistroy>

@@ -35,6 +35,9 @@ function goFavoriteAction(){
 <p>BuyItem</p>
 
 
+	<s:if test="errorMessage!=null">
+		<s:property value="errorMessage"/>
+	</s:if>
 	<s:form id="form" name="form" action="BuyItemAction">
 	<table>
 	<tr>

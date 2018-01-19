@@ -24,7 +24,7 @@ public class MyPageDAO {
 	 */
 
 	public ArrayList<MyPageDTO> getMyPageUserInfo(String item_transaction_id,String user_master_id)
-	throws SQLException {
+			throws SQLException {
 
 		ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
 		// 指定したユーザーの購入履歴を検索するSQL
@@ -68,9 +68,7 @@ public class MyPageDAO {
 	public int buyItemHistoryDelete(String item_transaction_id,String user_master_id)
 	throws SQLException {
 
-		String sql = "DELETE FROM user_buy_item_transaction where"
-				+ "item_transaction_id = ?"
-				+ "AND user_master_id = ?";
+		String sql = "DELETE FROM user_buy_item_transaction where item_transaction_id = ? AND user_master_id = ?";
 
 		PreparedStatement preparedStatement;
 		int result = 0;

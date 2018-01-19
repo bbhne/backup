@@ -16,7 +16,7 @@ public class FavoriteDAO {
 
 
 
-	private String itemName;
+	//private String itemName;
 
 //	public MyPageDTO selectItemTtransaction(String itemName){
 //		String itemTransactionId = null;

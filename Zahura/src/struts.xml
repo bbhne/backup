@@ -88,6 +88,7 @@
 	<action name="FavoriteAction" class="ec.zahura.action.FavoriteAction"
 	method="execute">
 	<result name="success">favoriteComplete.jsp</result>
+	<result name="error">buyItem.jsp</result>
 	</action>
 
 	</package>
