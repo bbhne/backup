@@ -25,6 +25,22 @@ pageEncoding="UTF-8" %>
 	<p>BuyItemComplete</p>
 
 	<p>購入手続きが完了致しました。</p>
+<s:form name="form" method="post" action="MyPageAction">
+<s:iterator value="buyConfList">
+	<s:hidden name="itemTransactionId" value="%{itemTransactionId}"/>
+	<s:hidden name="item" value="%{item}"/>
+	<s:hidden name="itemName" value="itemName"/>
+	<s:hidden name="itemPrice" value="%{itemPrice}"/>
+	<s:hidden name="count" value="%{count}"/>
+	<s:hidden name="checkList" value="checkList"/>
+	<s:hidden name="itemStock" value="%{itemStock}"/>
+	<s:hidden name="pay" value="pay"/>
+	<s:hidden name="userMasterId" value="%{userMasterId}"/>
+</s:iterator>
+<a href="javascript:void(0)" onclick="document.form.submit();return false;">マイページ</a>から購入履歴の確認が可能です。
+
+</s:form>
+
 
 	<a href='<s:url action="MyPageAction"/>'>マイページ</a>から購入履歴の確認が可能です。
 	<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>

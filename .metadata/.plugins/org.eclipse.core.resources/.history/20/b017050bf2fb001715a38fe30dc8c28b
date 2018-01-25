@@ -1,5 +1,0 @@
-@CHARSET "UTF-8";
-.resize{
-	width: px;
-	height:50px;
-}

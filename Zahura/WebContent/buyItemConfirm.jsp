@@ -23,6 +23,14 @@ pageEncoding="UTF-8" %>
 			$('form').attr('action',url);
 			$('form').submit();
 		}
+
+		function goBuyItemAction(){
+			document.getElementById('form').action = 'BuyItemAction';
+		}
+
+		function goBuyItemConfirmAction(){
+			document.getElementById('form').action = 'BuyItemConfirmAction';
+		}
 	</script>
 </head>
 
@@ -35,7 +43,7 @@ pageEncoding="UTF-8" %>
 
 
 
-<s:form action="BuyItemAction">
+<s:form id="form" name="form" action="BuyItemAction">
 
 
 
@@ -44,7 +52,7 @@ pageEncoding="UTF-8" %>
 		<s:iterator value="buyItemList">
 		<tr><s:property value="%{id}"/></tr>
 		<s:hidden name="itemTransactionId" value="%{id}"/>
-
+		<s:hidden name="userMasterId" value="%{userMasterId}"/>
 		<tr>
 			<td><span>商品名:</span><s:property value="itemName"/></td>
 			<s:hidden name="itemName" value="%{itemName}"/>
@@ -55,15 +63,20 @@ pageEncoding="UTF-8" %>
 			<td>値段:<s:property value="itemPrice"/><span>円</span></td>
 			<s:hidden name="itemPrice" value="%{itemPrice}"/>
 
-
+			<s:hidden name="count" value="%{count}"/>
+			<s:hidden name="userMasterId" value="%{userMasterId}"/>
+			<s:hidden name="checkList" value="%{id}"/>
 		</tr>
 		</s:iterator>
 
 		</table>
+
+
 		<input type="button" value="戻る"
 	onclick="location.href='BuyItemAction'"/>
 	<input type="button" value="完了"
 	onclick="location.href='BuyItemConfirmAction'"/>
+
 </s:form>
 
 
@@ -80,3 +93,6 @@ pageEncoding="UTF-8" %>
 </body>
 
 </html>
+
+		<s:submit value="戻る" onclick="goBuyItemAction();"/>
+		<s:submit value="完了" onclick="goBuyItemCompleteAction();"/>

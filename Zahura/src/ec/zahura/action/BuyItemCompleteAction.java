@@ -10,6 +10,8 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 
 	public Map<String,Object> session;
 
+	private String userMasterId;
+
 	/**
 	 * 商品購入情報登録完了メソッド
 	 */
@@ -23,5 +25,19 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 	public void setSession(Map<String,Object> session) {
 		this.session = session;
 	}
+
+	public String getUserMasterId() {
+		return userMasterId;
+	}
+
+	public void setUserMasterId(String userMasterId) {
+		this.userMasterId = userMasterId;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+
 
 }

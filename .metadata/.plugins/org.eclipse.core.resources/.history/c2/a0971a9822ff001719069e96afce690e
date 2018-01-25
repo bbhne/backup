@@ -1,0 +1,48 @@
+package ec.zahura.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ec.zahura.dto.TestDTO;
+import ec.zahura.util.DBConnector;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+
+public class TestDAO {
+
+
+
+	private List<TestDTO> testList = new ArrayList<TestDTO>();
+
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+
+	String sql ="SELEST id,item_name,item_price FROM item_info_transaction";
+
+	public TestDTO getTestItem() {
+
+
+		try {
+
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while(resultSet.next()) {
+				TestDTO test = new TestDTO();
+				test.setId(resultSet.getString("id"));
+				test.setItemName(resultSet.getString("item_name"));
+				test.setItemPrice(resultSet.getString("item_price"));
+				testList.add(test);
+
+			}
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return testList;
+
+
+	}
+}

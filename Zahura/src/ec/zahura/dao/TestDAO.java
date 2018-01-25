@@ -1,39 +1,58 @@
 package ec.zahura.dao;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Servlet implementation class TestDAO
- */
-public class TestDAO extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public TestDAO() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+import ec.zahura.dto.TestDTO;
+import ec.zahura.util.DBConnector;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+public class TestDAO {
+
+	public String id;
+	public String itemName;
+	public String itemPrice;
+
+	private List<TestDTO> testList = new ArrayList<TestDTO>();
+
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+
+	String sql ="SELEST id,item_name,item_price FROM item_info_transaction";
+
+	public List<TestDTO> testitem(String id,String itemName,String itemPrice) {
+		TestDTO test = new TestDTO();
+		try {
+
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if(resultSet.next()) {
+				test.setId(resultSet.getString("id"));
+				test.setItemName(resultSet.getString("item_name"));
+				test.setItemPrice(resultSet.getString("item_price"));
+				testList.add(test);
+System.out.println(id);
+System.out.println(itemName);
+System.out.println(itemPrice);
+			}
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return testList;
+
+
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	public List<TestDTO> getTestList() {
+		return testList;
 	}
 
+	public void setTestList(List<TestDTO> testList) {
+		this.testList = testList;
+	}
 }

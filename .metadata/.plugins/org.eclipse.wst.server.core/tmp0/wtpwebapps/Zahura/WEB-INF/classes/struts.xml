@@ -62,6 +62,7 @@
 	<action name="BuyItemConfirmAction" class="ec.zahura.action.BuyItemConfirmAction"
 	method="execute">
 	<result name="success">buyItemComplete.jsp</result>
+	<result name="error">home.jsp</result>
 	<result name="back">buyItem.jsp</result>
 	</action>
 
@@ -89,6 +90,11 @@
 	method="execute">
 	<result name="success">favoriteComplete.jsp</result>
 	<result name="error">buyItem.jsp</result>
+	</action>
+
+	<action name="TestAction" class="ec.zahura.action.TestAction"
+	method="execute">
+	<result name="success">test.jsp</result>
 	</action>
 
 	</package>

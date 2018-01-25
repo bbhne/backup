@@ -1,0 +1,5 @@
+package phantom.store.dao;
+
+public class LoginDAO {
+
+}

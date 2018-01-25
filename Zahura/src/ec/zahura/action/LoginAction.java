@@ -41,7 +41,17 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public Map<String,Object> session;
 
 
-	private List<BuyItemDTO> buyItemList = new ArrayList<BuyItemDTO>();
+
+
+	 // ログイン情報取得DAO
+	LoginDAO loginDAO = new LoginDAO();
+	// ログイン情報格納DTO
+	LoginDTO loginDTO = new LoginDTO();
+
+	private BuyItemDAO buyItemDAO = new BuyItemDAO();
+
+
+		private List<BuyItemDTO> buyItemList = new ArrayList<BuyItemDTO>();
 
 	private String itemTransactionId;
 	private String userMasterId;
@@ -53,14 +63,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		// 処理結果を格納
 		String result = ERROR;
 
-		 // ログイン情報取得DAO
-		LoginDAO loginDAO = new LoginDAO();
-		// ログイン情報格納DTO
-		LoginDTO loginDTO = new LoginDTO();
 		//ログイン実行
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
-
-		userMasterId=loginDTO.getId();
 
 		session.put("loginUser", loginDTO);
 
@@ -74,13 +78,17 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 
 			// アイテム情報を取得
-			BuyItemDAO buyItemDAO = new BuyItemDAO();
+			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
+			session.put("login_user_id", loginDTO.getLoginId());
+			session.put("id",buyItemDTO.getId());
+			session.put("buyItem_name", buyItemDTO.getItemName());
+			session.put("buyItem_price", buyItemDTO.getItemPrice());
 
 			//アイテム情報を取得
 			buyItemList = buyItemDAO.getBuyItemList();
 			System.out.println(buyItemList.get(0).getItemName());
 			System.out.println(buyItemList.get(0).getItemPrice());
-
+			userMasterId = loginDTO.getId();
 
 //			session.put("login_user_id", loginDTO.getLoginId());
 //			session.put("id", buyItemDTO.getId());

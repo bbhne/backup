@@ -14,6 +14,17 @@ import ec.zahura.dto.MyPageDTO;
 
 public class MyPageAction extends ActionSupport implements SessionAware {
 
+
+	private String itemTransactionId;
+	private String item;
+	private String itemName;
+	private String itemPrice;
+	private String count;
+	private String checkList;
+	private String itemStock;
+	private String pay;
+	private String userMasterId;
+
 	/**
 	 * ログイン情報を格納
 	 */
@@ -37,17 +48,35 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 	 * 商品履歴取得メソッド
 	 */
 	public String execute() throws SQLException {
-		if(!session.containsKey("id")) {
+
+		System.out.println("-----------MyPageAction");
+		System.out.println(itemTransactionId);
+		System.out.println(itemName);
+		System.out.println(itemPrice);
+		System.out.println(count);
+		System.out.println(checkList);
+		System.out.println(pay);
+		System.out.println(userMasterId);
+		System.out.println("------------------------");
+
+
+//		if(!session.containsKey("id")) {
+//			return ERROR;
+//		}
+
+		if(userMasterId == null){
+			message="ログインしていません。";
 			return ERROR;
 		}
 
 		//商品履歴を削除しない場合
 		if(deleteFlg == null) {
-			String item_transaction_id = session.get("id").toString();
-			String user_master_id = session.get("login_user_id").toString();
+//			String item_transaction_id = session.get("id").toString();
+//			String user_master_id = session.get("login_user_id").toString();
 
-			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
+//			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
 
+			myPageList = myPageDAO.getMyPageUserInfo(itemTransactionId, userMasterId);
 			Iterator<MyPageDTO> iterator = myPageList.iterator();
 			if(!(iterator.hasNext())) {
 				myPageList = null;
@@ -67,8 +96,6 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 	 * @throws SQLException
 	 */
 	public void delete() throws SQLException {
-		MyPageDAO myPageDAO = new MyPageDAO();
-
 		String item_transaction_id = session.get("id").toString();
 		String user_master_id = session.get("login_user_id").toString();
 

@@ -1,0 +1,20 @@
+package phantom.store.dao;
+
+import java.sql.Connection;
+
+import phantom.store.dto.LoginDTO;
+import phantom.store.util.DBConnector;
+
+public class LoginDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+	private LoginDTO loginDTO = new LoginDTO();
+
+	public LoginDTO getLoginUserInfo(String accountId,String userPass) {
+
+		String sql = "SELECT account_id,user_pass,user_name FROM user_table where account_id = ? AND user_pass = ?";
+
+	}
+
+}

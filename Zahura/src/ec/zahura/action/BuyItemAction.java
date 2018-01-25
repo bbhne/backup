@@ -36,6 +36,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	private String userMasterId;
 
 
+
 	private String errorMessage;
 
 	private List<BuyItemDTO> buyItemList = new ArrayList<BuyItemDTO>();
@@ -46,16 +47,17 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	 */
 	public String execute() {
 		String result=ERROR;
-//		System.out.println("-----------BuyItemAction");
-//		System.out.println(itemTransactionId);
-//		System.out.println(itemName);
-//		System.out.println(itemImage);
-//		System.out.println(itemPrice);
-//		System.out.println(count);
-//		System.out.println(checkList);
-//		System.out.println(pay);
-//		System.out.println(userMasterId);
-//		System.out.println("------------------------");
+		System.out.println("-----------BuyItemAction");
+		System.out.println(itemTransactionId);
+		System.out.println(itemName);
+		System.out.println(itemImage);
+		System.out.println(itemPrice);
+		System.out.println(count);
+		System.out.println(checkList);
+		System.out.println(pay);
+		System.out.println(userMasterId);
+		System.out.println("------------------------");
+
 
 		errorMessage=null;
 
@@ -78,29 +80,29 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 		for(int i=0; i< favoriteItemTransactionIdList.length;i++){
 			int id=Integer.parseInt(favoriteItemTransactionIdList[i]);
-			System.out.println(id);
+					System.out.println(id);
 
 				BuyItemDTO dto=new BuyItemDTO();
-				dto.setId(itemTransactionIdList[id-1].toString());
-				dto.setItemTransactionId(itemTransactionIdList[id-1].toString());
-				int price=Integer.parseInt(String.valueOf(itemPriceList[id-1]));
-				int c=Integer.parseInt(String.valueOf(countList[id-1]));
-				System.out.println(price);
-				System.out.println(c);
+				dto.setId(itemTransactionIdList[i].toString());
+				dto.setItemTransactionId(itemTransactionIdList[i].toString());
+				int price=Integer.parseInt(String.valueOf(itemPriceList[i]));
+				int c=Integer.parseInt(String.valueOf(countList[i]));
+					System.out.println(price);
+					System.out.println(c);
 				int total=price*c;
-				System.out.println("小計："+ (total));
+					System.out.println("小計："+ (total));
 				dto.setTotalPrice(String.valueOf(total));
 				dto.setUserMasterId(userMasterId);
 				dto.setPay(pay);
 
-				dto.setItemName(itemNameList[id-1].toString());
-				dto.setItemPrice(itemPriceList[id-1].toString());
-//				dto.setCount(countList[id-1].toString());
+				dto.setItemName(itemNameList[i].toString());
+				dto.setItemPrice(itemPriceList[i].toString());
+				dto.setCount(countList[i].toString());
 				dto.setUserMasterId(userMasterId);
 				buyItemList.add(dto);
 		}
 
-		System.out.println("購入商品が"+ buyItemList.size()+"件ありました");
+					System.out.println("購入商品が"+ buyItemList.size()+"件ありました");
 
 		result=SUCCESS;
 
@@ -112,21 +114,21 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 //		System.out.println("データベースに登録された件数："+ count);
 //
 //		buyItemList = dao.selectBuyItemConfirmList(userMasterId);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //		result = SUCCESS;
 //		session.put("count", count);
 //		int intCount = Integer.parseInt(session.get("count").toString());
@@ -150,7 +152,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		return session;
 	}
 
-
+@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}

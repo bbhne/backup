@@ -35,7 +35,8 @@ drop table if exists item_info_transaction;
 	INSERT INTO item_info_transaction(item_name,item_image,item_price,item_stock) VALUES("OGLEのうすいほん","./image/phanpro.png",1000,13);
 	INSERT INTO item_info_transaction(item_name,item_image,item_price,item_stock) VALUES("かーるぐすたふ","./image/ogre2.png",500,5);
 	INSERT INTO item_info_transaction(item_name,item_image,item_price,item_stock) VALUES("はっしゅぱぴー","./image/ogre2.png",500,6);
-
+	INSERT INTO item_info_transaction(item_name,item_image,item_price,item_stock) VALUES("かきくけこ","./image/ogre2.png",500,5);
+	INSERT INTO item_info_transaction(item_name,item_image,item_price,item_stock) VALUES("はっしゅ","./image/ogre2.png",500,6);
 	drop table if exists item_favorite;
 		create table item_favorite(
 		id int not null primary key auto_increment,
