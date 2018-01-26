@@ -1,0 +1,17 @@
+package ec.zahura.dto;
+
+public class SearchDTO {
+
+	public String itemName;
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+
+
+}

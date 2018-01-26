@@ -18,7 +18,6 @@
 <fullyQualifiedTypeName name="ec.zahura.dao.FavoriteDAO"/>
 <fullyQualifiedTypeName name="ec.zahura.dto.FavoriteDTO"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.compiler.sym"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="ec.zahura.dao.BuyItemDAO"/>
 <fullyQualifiedTypeName name="ec.zahura.dto.BuyItemDTO"/>
 <fullyQualifiedTypeName name="ec.zahura.dto.TestDTO"/>
@@ -28,9 +27,12 @@
 <fullyQualifiedTypeName name="phantom.store.dto.LoginDTO"/>
 <fullyQualifiedTypeName name="phantom.store.dao.BuyItemDAO"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="ec.zahura.dto.SearchDTO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="ec.zahura.dao.SearchDAO"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="phantom.store.dto.MyPageDTO"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>

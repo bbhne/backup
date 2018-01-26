@@ -1,0 +1,57 @@
+package ec.zahura.action;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import ec.zahura.dao.SearchDAO;
+import ec.zahura.dto.SearchDTO;
+
+public class SearchAction extends ActionSupport implements SessionAware {
+
+	public Map<String,Object> session;
+	private String itemName;
+
+	private SearchDTO searchDTO = new SearchDTO();
+
+	private SearchDAO searchDAO = new SearchDAO();
+
+	public List<SearchDTO> searchList = new ArrayList<SearchDTO>();
+
+	public String execute() {
+
+		String result = SUCCESS;
+
+		session.put("searchList", searchList);
+
+		return result;
+
+	}
+
+
+
+	public List<SearchDTO> getSearchList() {
+		return searchList;
+	}
+
+
+
+	public void setSearchList(List<SearchDTO> searchList) {
+		this.searchList = searchList;
+	}
+
+
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+
+	}
+
+
+
+}

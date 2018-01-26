@@ -39,6 +39,7 @@ pageEncoding="UTF-8" %>
 
 
 <div id="main">
+<div id="center">
 商品を購入する際はログインをお願いします。<br>
 phantom225
 <s:form action="LoginAction">
@@ -50,7 +51,7 @@ phantom225
 <p>新規ユーザー登録は<a href='<s:url action="UserCreateAction"/>'>こちら</a></p>
 <p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 </div>
-
+</div>
 
 <div id="sita">
 	<ul>

@@ -91,11 +91,26 @@ width:100%;
 		font-size:16px;
 	}
 
+
 	#content {
 		float:left;
 		width:75%;
 		background-color:#ffffff;
 		text-align:center;
+	}
+
+	#content th,td {
+
+		border:1px solid #000000;
+		border-radius:10%;
+	}
+
+	ul {
+		list-style-type:none;
+
+	}
+	ul li {
+		display:block;
 	}
 			#content img {
 			display:inline-block;
