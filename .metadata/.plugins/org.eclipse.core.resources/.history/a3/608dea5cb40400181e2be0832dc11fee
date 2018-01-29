@@ -1,0 +1,5 @@
+package ec.phantom.store.action;
+
+public class BuyItemListAction {
+
+}

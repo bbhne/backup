@@ -1,0 +1,43 @@
+package ec.phantom.store.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import ec.phantom.store.dto.SearchDTO;
+import ec.phantom.store.util.DBConnector;
+
+
+public class SearchDAO {
+
+	private ArrayList<SearchDTO> searchList =new ArrayList<SearchDTO>();
+
+
+	String sql = "SELECT item_name FROM item_table";
+
+	public ArrayList<SearchDTO> getSearch() throws SQLException {
+
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+		SearchDTO searchDTO = new SearchDTO();
+
+//item_nameぜんぶ
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while(resultSet.next()) {
+				resultSet.getString("item_name");
+				searchList.add(searchDTO);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			connection.close();
+		}
+		return searchList;
+	}
+
+}

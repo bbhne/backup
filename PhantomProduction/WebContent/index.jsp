@@ -14,15 +14,41 @@
 </head>
 <body>
 	<div id="header">
-		<img  src="./image/phanp.png">
+		<a href="index.jsp"><img  src="./image/phanp.png"></a>
 	<ul>
-	<li><a href="">ログイン</a></li>
-	<li><a href="">新規登録</a></li>
-	<li><a href="">ヘルプ</a></li>
+
+	<s:if test="#session.loginUser.accountId != length()">
+	<s:iterator value="#session.loginUser">
+	<li>こんにちは、<a href='<s:url action="MyPageAction"/>'><s:property value="userName"/></a>さん</li>
+	</s:iterator>
+	</s:if>
+
+
+	<s:if test="#session.loginUser == length()">
+	<li><a href='<s:url action="LoginFormAction"/>'>ログイン</a></li>
+	</s:if>
+
+			<s:if test="#session.loginUser.accountId == length()">
+			<li><a href='<s:url action="LoginFormAction"/>'>ログイン</a></li>
+			</s:if>
+
+	<s:if test="#session.loginUser.accountId != length()">
+	<li><a href='<s:url action="LogoutAction"/>'>ログアウト</a></li>
+	</s:if>
+
+	<s:if test="#session.loginUser == length()">
+	<li><a href='<s:url action="UserCreateAction"/>'>新規登録</a></li>
+	</s:if>
+			<s:if test="#session.loginUser.accountId == length()">
+			<li><a href='<s:url action="UserCreateAction"/>'>新規登録</a></li>
+			</s:if>
+
+	<li><a href='<s:url action="HelpAction"/>'>ヘルプ</a></li>
+
 	</ul>
 
 	<div id="pan">
-	Index
+	Index<a href='<s:url action="SearchAction"/>'>a</a>
 	</div>
 
 	</div>
@@ -32,53 +58,74 @@
 	<div id="menu">
 		<div class="menu">
 		<h1>シリーズタイトルから探す</h1>
-		<a href="">OrcinusBlue</a><br>
-		<a href="" >ScarletCode</a><br>
-		<a href="">MaximumFear</a>
+		<a href='<s:url action="BuyItemListAction" value="orcinus"/>'>OrcinusBlue</a><br>
+		<a href='<s:url action="BuyItemListAction" value="scarlet"/>'>ScarletCode</a><br>
+		<a href='<s:url action="BuyItemListAction" value="maximum"/>'>MaximumFear</a>
 		</div>
 
 		<div class="menu">
 		<h1>ジャンルから探す</h1>
-		<a href="">Book</a><br>
-		<a href="" >Game</a><br>
-		<a href="">Sound</a>
+		<a href='<s:url action="BuyItemListAction" value="book"/>'>Book</a><br>
+		<a href='<s:url action="BuyItemListAction" value="game"/>'>Game</a><br>
+		<a href='<s:url action="BuyItemListAction" value="sound"/>'>Sound</a>
 		</div>
 
 		<div class="menu">
 		<h1></h1>
-		お探しの作品名を入力してください
+		お探しの作品名を入力<br>してください
+		<p>
 		<s:form action="SearchAction">
 		<s:textfield name="search"/>
 		<s:submit value="検索"/>
 		</s:form>
+		</p>
 		</div>
 
+<div class="menu">
+<p>ログインしてるユーザー情報</p>
+		<s:iterator value="#session.loginUser">
+		<s:property value="userNumber"/><br>
+		<s:property value="accountId"/><br>
+		<s:property value="userName"/><br>
+		<s:property value="userPassword"/><br>
+		<s:property value="userMail"/><br>
+		</s:iterator>
 
+</div>
 
 	</div>
 
 
 	<div id="content">
+
 	<div id="pick">
 	<img src="./image/ao.png" >
+
 	</div>
 
 	<img alt="" src="./image/bor.png">
-	<img alt="" src="./image/bogre.png">
+	<img alt="" src="./image/bor.png">
 	</div>
 
 	</div>
 
 <div id="sita">
-	<ul>
-		<h1>ご利用方法</h1><li>ご利用ガイド</li><li>お支払方法について</li>
-	</ul>
+<img alt="" src="./image/bor.png">
+<div class="right">
 		<ul>
-		<h1>このサイトについて</h1><li></li>
+		<li><h1>ご利用方法</h1></li>
+		<li>ご利用ガイド</li><li>お支払方法について</li>
 		</ul>
-			<ul>
-			<h1>お問い合わせ</h1><li>お問い合わせはこちら</li><li>よくある質問</li>
-			</ul>
+		<ul>
+		<li><h1>このサイトについて</h1></li>
+		<li></li>
+		</ul>
+		<ul>
+		<li><h1>お問い合わせ</h1></li>
+		<li><a href='<s:url action="InquiryAction"/>'>お問い合わせはこちら</a></li>
+		<li>よくある質問</li>
+		</ul>
+</div>
 </div>
 
 	<div id="footer">

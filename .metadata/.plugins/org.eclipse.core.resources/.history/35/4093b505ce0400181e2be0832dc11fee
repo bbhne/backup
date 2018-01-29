@@ -1,0 +1,5 @@
+package ec.phantom.store.dao;
+
+public class AdminLoginDAO {
+
+}
