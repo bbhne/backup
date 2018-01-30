@@ -1,0 +1,59 @@
+package ec.phantom.store.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import ec.phantom.store.dto.InquiryCompleteDTO;
+import ec.phantom.store.util.DBConnector;
+
+public class InquiryCompleteDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+
+	private Connection connection = dbConnector.getConnection();
+
+	private String sql = "INSERT INTO inquiry_table (name,qtype,body) VALUES(?,?,?)";
+
+	private ArrayList<InquiryCompleteDTO> inquiryList = new ArrayList<InquiryCompleteDTO>();
+
+	public void inquiry(String name,String qtype,String body) throws SQLException {
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, name);
+			preparedStatement.setString(2, qtype);
+			preparedStatement.setString(3, body);
+
+			preparedStatement.execute();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			connection.close();
+		}
+	}
+	public ArrayList<InquiryCompleteDTO> getInquiryInfo(String name1,String qtype1,String body1) throws SQLException {
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, name1);
+			preparedStatement.setString(2, qtype1);
+			preparedStatement.setString(3, body1);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if(resultSet.next()) {
+				InquiryCompleteDTO inquiry = new InquiryCompleteDTO();
+				inquiry.setName(resultSet.getString("name"));
+				inquiry.setQtype(resultSet.getString("qtype"));
+				inquiry.setBody(resultSet.getString("body"));
+				inquiryList.add(inquiry);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return inquiryList;
+		}
+
+}

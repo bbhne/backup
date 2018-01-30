@@ -97,6 +97,31 @@
 
 	<div id="content">
 マイページなのよ
+
+	<s:if test="myPageList == null">
+	<p>購入情報はありません</p>
+	</s:if>
+
+	<s:elseif test="message == null">
+	<p>購入情報は以下になります</p>
+<table>
+		<s:iterator value="myPageList">
+		<td><s:property value="itemName"/></td>
+		<td><img src='<s:property value="itemImage"/>'/></td>
+		<td><s:property value="totalPrice"/></td>
+		<td><s:property value="totalCount"/></td>
+		<td><s:property value="payment"/></td>
+		</s:iterator>
+</table>
+	<s:form action="MyPageAction">
+		<input type="hidden" name="deleteFlg" value="1">
+		<s:submit value="削除" method="delete"/>
+	</s:form>
+	</s:elseif>
+	<s:if test="message != null">
+	<p><s:property value="message"/></p>
+	</s:if>
+
 	</div>
 
 	</div>
@@ -106,15 +131,15 @@
 <div class="right">
 		<ul>
 		<li><h1>ご利用方法</h1></li>
-		<li>ご利用ガイド</li><li>お支払方法について</li>
+		<li><a href='<s:url action="HelpAction" value="guide"/>'>ご利用ガイド</a></li>
+		<li><a href='<s:url action="HelpAction" value="guide"/>'>お支払方法について</a></li>
+		<li><a href='<s:url action="HelpAction" value="deli"/>'>配送・送料について</a></li>
+		<li><a href='<s:url action="HelpAction" value="mail"/>'>メールについて</a><li>
 		</ul>
-		<ul>
-		<li><h1>このサイトについて</h1></li>
-		<li></li>
-		</ul>
+
 		<ul>
 		<li><h1>お問い合わせ</h1></li>
-		<li>お問い合わせはこちら</li><li>よくある質問</li>
+		<li><a href='<s:url action="InquiryAction"/>'>こちらから</a></li>
 		</ul>
 </div>
 </div>

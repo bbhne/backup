@@ -13,6 +13,10 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	 */
 	private int count;
 
+	private int payment;
+
+	private int itemNumber;
+
 	/**
 	 * 支払い方法
 	 */
@@ -26,7 +30,15 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	/**
 	 * 商品情報取得メソッド
 	 */
+
+	private String errorMessage;
 	public String execute() {
+
+		if(!session.containsKey("loginUser")) {
+			setErrorMessage("購入する場合はログインしてください!");
+			return ERROR;
+
+		}
 
 		String result = SUCCESS;
 
@@ -37,7 +49,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 		session.put("total_price", intCount * intPrice);
 		String payment;
-
+System.out.println(pay);
 		if(pay.equals("1")) {
 			payment = "現金払い";
 			session.put("pay", payment);
@@ -67,6 +79,30 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public int getPayment() {
+		return payment;
+	}
+
+	public void setPayment(int payment) {
+		this.payment = payment;
+	}
+
+	public int getItemNumber() {
+		return itemNumber;
+	}
+
+	public void setItemNumber(int itemNumber) {
+		this.itemNumber = itemNumber;
 	}
 
 

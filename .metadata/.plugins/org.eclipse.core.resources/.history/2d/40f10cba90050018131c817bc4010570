@@ -1,0 +1,33 @@
+
+		#content table {
+			float:left;
+			border:0px solid #000000;
+			text-align:center;
+			margin:1em;
+						margin:0;
+			padding:0;
+
+		}
+		#content th {
+			float:left;
+			min-width:100px;
+			height:1em;
+			border:1px solid #000000;
+			text-align:center;
+			color:#000000;
+			margin:0;
+			padding:0;
+		}
+
+		#content td {
+			float:left;
+			min-width:100px;
+			height:2em;
+			border:1px solid #000000;
+			text-align:center;
+			color:#000000;
+			font-size:20px;
+			line-height:30px;
+						margin:0;
+			padding:0;
+		}

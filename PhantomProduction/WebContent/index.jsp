@@ -9,7 +9,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<link rel="stylesheet" type="text/css" href="css/style.css" >
-<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" >
 <title>PHANTOM PRODUCTION</title>
 </head>
 <body>
@@ -47,10 +46,6 @@
 
 	</ul>
 
-	<div id="pan">
-	Index<a href='<s:url action="SearchAction"/>'>a</a>
-	</div>
-
 	</div>
 
 	<div id="main">
@@ -73,12 +68,15 @@
 		<div class="menu">
 		<h1></h1>
 		お探しの作品名を入力<br>してください
+
+		<div align="center">
 		<p>
 		<s:form action="SearchAction">
 		<s:textfield name="search"/>
 		<s:submit value="検索"/>
 		</s:form>
 		</p>
+		</div>
 		</div>
 
 <div class="menu">
@@ -99,10 +97,10 @@
 	<div id="content">
 
 	<div id="pick">
+
 	<img src="./image/ao.png" >
 
 	</div>
-
 	<img alt="" src="./image/bor.png">
 	<img alt="" src="./image/bor.png">
 	</div>
@@ -114,16 +112,15 @@
 <div class="right">
 		<ul>
 		<li><h1>ご利用方法</h1></li>
-		<li>ご利用ガイド</li><li>お支払方法について</li>
+		<li><a href='<s:url action="HelpAction" value="guide"/>'>ご利用ガイド</a></li>
+		<li><a href='<s:url action="HelpAction" value="guide"/>'>お支払方法について</a></li>
+		<li><a href='<s:url action="HelpAction" value="deli"/>'>配送・送料について</a></li>
+		<li><a href='<s:url action="HelpAction" value="mail"/>'>メールについて</a><li>
 		</ul>
-		<ul>
-		<li><h1>このサイトについて</h1></li>
-		<li></li>
-		</ul>
+
 		<ul>
 		<li><h1>お問い合わせ</h1></li>
-		<li><a href='<s:url action="InquiryAction"/>'>お問い合わせはこちら</a></li>
-		<li>よくある質問</li>
+		<li><a href='<s:url action="InquiryAction"/>'>こちらから</a></li>
 		</ul>
 </div>
 </div>

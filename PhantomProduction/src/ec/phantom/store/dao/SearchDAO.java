@@ -15,8 +15,6 @@ public class SearchDAO {
 	private ArrayList<SearchDTO> searchList =new ArrayList<SearchDTO>();
 
 
-
-
 	public ArrayList<SearchDTO> getSearch(String itemNumber,String itemImage,String itemName,String itemType,String itemPrice) throws SQLException {
 
 		DBConnector dbConnector = new DBConnector();
@@ -45,4 +43,34 @@ public class SearchDAO {
 		return searchList;
 	}
 
+
+
+	public ArrayList<SearchDTO> getSearch2(String itemNumber,String itemImage,String itemName,String itemType,String itemPrice) throws SQLException {
+
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+
+		String sql = "SELECT * FROM item_info_transaction WHERE item_name LIKE %?%";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+					while(resultSet.next()) {
+						SearchDTO searchDTO = new SearchDTO();
+						searchDTO.setItemNumber(resultSet.getString("item_number"));
+						searchDTO.setItemImage(resultSet.getString("item_image"));
+						searchDTO.setItemName(resultSet.getString("item_name"));
+						searchDTO.setItemType(resultSet.getString("item_type"));
+						searchDTO.setItemPrice(resultSet.getString("item_price"));
+						searchList.add(searchDTO);
+			}
+
+			}catch(Exception e) {
+				e.printStackTrace();
+		}finally {
+			connection.close();
+		}
+		return searchList;
+	}
 }

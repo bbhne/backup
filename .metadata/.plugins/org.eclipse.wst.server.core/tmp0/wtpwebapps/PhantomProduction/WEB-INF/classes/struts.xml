@@ -39,7 +39,7 @@
 	<!-- LoginAction -->
 	<action name="LoginAction" class="ec.phantom.store.action.LoginAction"
 	method="execute">
-	<result name="success">buyItem.jsp</result>
+	<result name="success">index.jsp</result>
 	<result name="error">login.jsp</result>
 	</action>
 
@@ -101,8 +101,32 @@
 	<result name="success">buyItem.jsp</result>
 	</action>
 
+	<!-- BuyItemAction -->
+	<action name="BuyItemAction" class="ec.phantom.store.action.BuyItemAction"
+	method="execute">
+	<result name="success">buyItemConfirm.jsp</result>
+	<result name="error">buyItem.jsp</result>
+	</action>
 
+	<!-- BuyItemConfirmAction -->
+	<action name="BuyItemConfirmAction" class="ec.phantom.store.action.BuyItemConfirmAction"
+	method="execute">
+	<result name="success">buyItemComplete.jsp</result>
+	<result name="error">buyItem.jsp</result>
+	</action>
 
+	<!-- BuyItemCompleteAction -->
+	<action name="BuyItemCompleteAction" class="ec.phantom.store.action.BuyItemCompleteAction"
+	method="execute">
+	<result name="success">index.jsp</result>
+	</action>
+
+	<!-- BuyItemDetailAction -->
+	<action name="BuyItemDetailAction" class="ec.phantom.store.action.BuyItemDetailAction"
+	method="execute">
+	<result name="success">buyItem.jsp</result>
+	<result name="error">buyItemList.jsp</result>
+	</action>
 
 	<!-- AdminLoginAction -->
 	<action name="AdminLoginAction" class="ec.phantom.store.action.AdminLoginAction"
@@ -111,6 +135,11 @@
 	<result name="error">admin_login.jsp</result>
 	</action>
 
+	<!-- InquiryInfo -->
+	<action name="InquiryInfo" class="ec.phantom.store.action.InquiryInfo"
+	method="execute">
+	<result name="success">zahuraInquiryInfo.jsp</result>
+	</action>
 
 
 	</package>

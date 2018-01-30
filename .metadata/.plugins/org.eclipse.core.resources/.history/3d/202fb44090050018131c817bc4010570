@@ -1,0 +1,25 @@
+
+		#content table {
+			float:left;
+			border:0px solid #000000;
+			text-align:center;
+			margin:1em;
+
+		}
+		#content th {
+			float:left;
+			min-width:60px;
+			height:1em;
+			border:1px solid #000000;
+			text-align:center;
+			color:#000000;
+		}
+
+		#content td {
+			float:left;
+			min-width:60px;
+			height:1em;
+			border:1px solid #000000;
+			text-align:center;
+			color:#000000;
+		}

@@ -4,6 +4,8 @@ public class BuyItemDTO {
 
 	public int itemTransactionId;
 
+	public String accountId;
+
 	public String itemName;
 
 	public String itemPrice;
@@ -15,6 +17,16 @@ public class BuyItemDTO {
 
 	public void setItemTransactionId(int itemTransactionId) {
 		this.itemTransactionId = itemTransactionId;
+	}
+
+
+
+	public String getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
 	}
 
 	public String getItemName() {

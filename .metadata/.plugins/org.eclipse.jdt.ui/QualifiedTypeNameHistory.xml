@@ -14,7 +14,6 @@
 <fullyQualifiedTypeName name="com.mysql.fabric.xmlrpc.base.Array"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="ec.zahura.dto.MyPageDTO"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="ec.zahura.dao.FavoriteDAO"/>
 <fullyQualifiedTypeName name="ec.zahura.dto.FavoriteDTO"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.compiler.sym"/>
@@ -26,15 +25,21 @@
 <fullyQualifiedTypeName name="phantom.store.dao.UserCreateCompleteDAO"/>
 <fullyQualifiedTypeName name="phantom.store.dto.LoginDTO"/>
 <fullyQualifiedTypeName name="phantom.store.dao.BuyItemDAO"/>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="ec.zahura.dto.SearchDTO"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="ec.zahura.dao.SearchDAO"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="phantom.store.dto.MyPageDTO"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="ec.phantom.store.util.DBConnector"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="ec.phantom.store.dto.InquiryCompleteDTO"/>
+<fullyQualifiedTypeName name="ec.phantom.store.dao.InquiryCompleteDAO"/>
+<fullyQualifiedTypeName name="ec.phantom.store.dao.InquiryInfoDAO"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
 <fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>
 </qualifiedTypeNameHistroy>

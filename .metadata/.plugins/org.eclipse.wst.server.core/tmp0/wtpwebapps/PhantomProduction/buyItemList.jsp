@@ -48,7 +48,6 @@
 	</ul>
 
 	<div id="pan">
-	Index
 	</div>
 
 	</div>
@@ -63,11 +62,23 @@
 	<s:iterator value="searchList">
 	<td>
 	<div class="ribbon2"></div>
-		<s:property value="itemNumber"/><br>
-		<a href='<s:url action="GoBuyItemAction"/>'><img src='<s:property value="itemImage"/>'/></a><br>
+<s:form action="BuyItemDetailAction">
+		<s:property value="itemNumber"/>
+		<br>
+		<a href='<s:url action="BuyItemDetailAction"><s:param name="itemName" value="%{itemName}"/>
+			<s:param name="itemType" value="%{itemType}"/>
+			<s:param name="itemPrice" value="%{itemPrice}"/>
+			<s:param name="itemNumber" value="%{itemNumber}"/>
+			</s:url>'><img src='<s:property value="itemImage"/>'/></a><br>
 		<p><s:property value="itemName"/></p>
 		<s:property value="itemType"/><br>
 		<s:property value="itemPrice"/><br>
+		<s:hidden name="itemName" value="%{itemName}"/>
+		<s:hidden name="itemType" value="%{itemType}"/>
+		<s:hidden name="itemPrice" value="%{itemPrice}"/>
+		<s:hidden name="itemNumber" value="%{itemNumber}"/>
+		<s:submit value="詳細を見る"/>
+	</s:form>
 	</td>
 	</s:iterator>
 	</table>
@@ -81,15 +92,15 @@
 <div class="right">
 		<ul>
 		<li><h1>ご利用方法</h1></li>
-		<li>ご利用ガイド</li><li>お支払方法について</li>
+		<li><a href='<s:url action="HelpAction" value="guide"/>'>ご利用ガイド</a></li>
+		<li><a href='<s:url action="HelpAction" value="guide"/>'>お支払方法について</a></li>
+		<li><a href='<s:url action="HelpAction" value="deli"/>'>配送・送料について</a></li>
+		<li><a href='<s:url action="HelpAction" value="mail"/>'>メールについて</a><li>
 		</ul>
-		<ul>
-		<li><h1>このサイトについて</h1></li>
-		<li></li>
-		</ul>
+
 		<ul>
 		<li><h1>お問い合わせ</h1></li>
-		<li>お問い合わせはこちら</li><li>よくある質問</li>
+		<li><a href='<s:url action="InquiryAction"/>'>こちらから</a></li>
 		</ul>
 </div>
 </div>

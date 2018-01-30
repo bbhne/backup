@@ -1,6 +1,6 @@
 
 body {
-	font-family:YuMincho,'Yu Mincho',serif;
+	font-family: Georgia, Times, "Times New Roman", serif;
 	color:#5a5a5a;
 	margin:0;
 	padding:0;
@@ -124,6 +124,7 @@ border-width:0px 10px 10px 0px;
 					margin-right:auto;
 				}
 
+
 					#sita {
 						float:left;
 						width:100%;
@@ -152,12 +153,31 @@ border-width:0px 10px 10px 0px;
 						float:left;
 						list-style:none;
 						background-color:;
+						margin-right:3em;
 					}
 
 					#sita ul li {
 						float:;
-						font-size:14px;
+						font-size:18px;
 					}
+
+
+	#sita a:link {
+	color:#ffffff;
+	text-decoration:none;
+	}
+	#sita a:visited {
+	color:#ffffff;
+	text-decoration:none;
+	}
+	#sita a:hover {
+	color:#0fb9e5;
+	text-decoration:none;
+	}
+	#sita a:active {
+	color:#52ffd0;
+	text-decoration:none;
+	}
 
 
 

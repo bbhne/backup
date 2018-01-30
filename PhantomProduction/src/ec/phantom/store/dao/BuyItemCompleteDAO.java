@@ -12,7 +12,7 @@ public class BuyItemCompleteDAO {
 
 	private Connection connection = dbConnector.getConnection();
 
-	private String sql = "INSERT INTO user_buy_item_transaction (item_transaction_id,total_price,total_count,account_id,pay) VALUES(?,?,?,?,?)";
+	private String sql = "INSERT INTO user_buy_item_transaction (item_transaction_id,account_id,total_price,total_count,pay) VALUES(?,?,?,?,?)";
 
 		/**
 		 * 商品購入情報登録メソッド

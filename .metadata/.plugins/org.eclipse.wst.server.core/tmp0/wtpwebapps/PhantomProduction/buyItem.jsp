@@ -54,21 +54,43 @@
 
 	<div id="main">
 	</div>
-		<s:if test="errorMessage!=null">
-		<s:property value="errorMessage"/>
+		<s:if test="errorMessage != ''">
+		<s:property value="errorMessage" escape="false"/>
 		</s:if>
-		
+
 		<s:form action="BuyItemAction">
 		<table>
-		<s:iterator value="buyItemList">
-		
-		<s:hidden name="itemTransactionId" value=%{item_transaction_id}/>
-		<s:hidden name="accountId" value=%{accountId}/>
-		
-		
-		
-		
-		</s:iterator>
+
+		<tr>
+		<td><s:property value="session.buyItem_name"/></td>
+		</tr>
+			<tr>
+			<td><s:property value="session.buyItem_price"/></td>
+			</tr>
+				<tr>
+				<td>購入個数</td>
+				<td>
+				<select name="count">
+				<option value="1" selected="selected">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				</select>
+				</td>
+				</tr>
+			<tr>
+			<td>
+			支払い方法
+			</td>
+			<td>
+			<input type="radio" name="pay" value="1" checked="checked">現金払い
+			<input type="radio" name="pay" value="2">クレジット
+			</td>
+			</tr>
+		<tr>
+		<td><s:submit value="購入"/></td>
+		</tr>
 		</table>
 		</s:form>
 
@@ -83,15 +105,15 @@
 <div class="right">
 		<ul>
 		<li><h1>ご利用方法</h1></li>
-		<li>ご利用ガイド</li><li>お支払方法について</li>
+		<li><a href='<s:url action="HelpAction" value="guide"/>'>ご利用ガイド</a></li>
+		<li><a href='<s:url action="HelpAction" value="guide"/>'>お支払方法について</a></li>
+		<li><a href='<s:url action="HelpAction" value="deli"/>'>配送・送料について</a></li>
+		<li><a href='<s:url action="HelpAction" value="mail"/>'>メールについて</a><li>
 		</ul>
-		<ul>
-		<li><h1>このサイトについて</h1></li>
-		<li></li>
-		</ul>
+
 		<ul>
 		<li><h1>お問い合わせ</h1></li>
-		<li>お問い合わせはこちら</li><li>よくある質問</li>
+		<li><a href='<s:url action="InquiryAction"/>'>こちらから</a></li>
 		</ul>
 </div>
 </div>

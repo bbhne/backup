@@ -1,10 +1,13 @@
 package ec.phantom.store.action;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
+
+import ec.phantom.store.dao.InquiryCompleteDAO;
 
 public class InquiryCompleteAction extends ActionSupport implements SessionAware {
 
@@ -14,15 +17,26 @@ public class InquiryCompleteAction extends ActionSupport implements SessionAware
 	private String qtype;
 	private String body;
 
+
+	private InquiryCompleteDAO inquiryDAO = new InquiryCompleteDAO();
+
 	private String errorMessage;
 
-	public String execute() {
+	public String execute() throws SQLException {
 
 		String result = SUCCESS;
 
 		if(!(userName.equals("")) && !(body.equals(""))) {
 			session.put("inquiry", userName);
+			session.put("qtype",qtype);
 			session.put("body", body);
+			if(!(userName.equals(null)) && !(body.equals(null))) {
+						inquiryDAO.inquiry(
+						session.get("inquiry").toString(),
+						session.get("qtype").toString(),
+						session.get("body").toString()
+						);
+			}
 		}else {
 			setErrorMessage("未入力です！");
 			result = ERROR;

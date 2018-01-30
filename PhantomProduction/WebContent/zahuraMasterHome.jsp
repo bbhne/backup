@@ -48,7 +48,7 @@
 	</ul>
 
 	<div id="pan">
-	Index管理者画面
+	管理者画面
 	</div>
 
 	</div>
@@ -67,15 +67,27 @@
 		<a href='<s:url action="GoBuyItemAction"/>'><img src='<s:property value="itemImage"/>'/></a><br>
 		<p><s:property value="itemName"/></p>
 		<s:property value="itemType"/><br>
-		<s:property value="itemPrice"/><br
-		>
-		(zahura)
+		<s:property value="itemPrice"/><br>
+
 	</td>
 	</s:iterator>
 	</table>
 		</div>
 		</div>
+<div id="content">
 
+
+
+
+<div align="center">
+<s:form action="InquiryInfo">
+<s:submit value="問い合わせ一覧"/>
+</s:form>
+</div>
+
+
+
+</div>
 	</div>
 
 <div id="sita">
@@ -83,15 +95,15 @@
 <div class="right">
 		<ul>
 		<li><h1>ご利用方法</h1></li>
-		<li>ご利用ガイド</li><li>お支払方法について</li>
+		<li><a href='<s:url action="HelpAction" value="guide"/>'>ご利用ガイド</a></li>
+		<li><a href='<s:url action="HelpAction" value="guide"/>'>お支払方法について</a></li>
+		<li><a href='<s:url action="HelpAction" value="deli"/>'>配送・送料について</a></li>
+		<li><a href='<s:url action="HelpAction" value="mail"/>'>メールについて</a><li>
 		</ul>
-		<ul>
-		<li><h1>このサイトについて</h1></li>
-		<li></li>
-		</ul>
+
 		<ul>
 		<li><h1>お問い合わせ</h1></li>
-		<li>お問い合わせはこちら</li><li>よくある質問</li>
+		<li><a href='<s:url action="InquiryAction"/>'>こちらから</a></li>
 		</ul>
 </div>
 </div>
